@@ -1,21 +1,27 @@
 ---
-interface Props {
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
 	title: string;
-	body: string;
-	href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { class: classList, title } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div
+	class={`rounded-xl flex items-center justify-center h-full w-1/4 relative ${classList}`}
+>
+	<span
+		class="[writing-mode:vertical-lr] h-fit rotate-180 font-semibold uppercase"
+	>
+		{title}
+	</span>
+
+	<input
+		class="absolute h-full w-full opacity-0"
+		name={title}
+		type="color"
+		value={title}
+	/>
+</div>
+
