@@ -9,14 +9,18 @@ import { Icon } from "astro-icon/components";
 <Layout title="Welcome to Astro.">
 	<DepthControl client:load threshold={0.1} />
 
-	<main class="h-auto lg:h-screen mx-auto flex flex-col lg:flex-row w-full max-w-screen-2xl gap-4 p-4">
+	<main
+		class="h-auto lg:h-screen mx-auto flex flex-col lg:flex-row w-full max-w-screen-2xl gap-4 p-4"
+	>
 		<section class="flex flex-col h-auto lg:h-full w-full lg:w-3/4 gap-4">
 			<div class="flex h-60 lg:h-3/5 w-full gap-4">
-				<div class="rounded-xl h-full w-3/4 flex gap-4 bg-accent-light">
+				<div
+					class="rounded-xl h-full w-3/4 flex justify-center gap-4 bg-accent-light relative overflow-hidden"
+				>
 					<img
 						alt="Desktop view"
-						class="w-[85%] mx-auto h-auto object-contain"
-						src="/img/desktop.png"
+						class="w-[85%] mx-auto h-auto object-contain absolute translate-y-8 lg:translate-y-16"
+						src="/img/desktop-extended.png"
 					/>
 				</div>
 
@@ -73,15 +77,24 @@ import { Icon } from "astro-icon/components";
 			<div
 				class="flex items-center justify-center rounded-xl h-3/4 w-full bg-accent-light p-6 lg:p-10"
 			>
-				<div class="border border-background-dark rounded-lg overflow-hidden">
+				<div
+					class="border border-background-dark rounded-lg overflow-hidden"
+				>
 					<div class="px-3 py-1.5 flex justify-between items-center">
-						<p>Zymbit</p>
+						<div class="flex gap-2 items-center">
+							<Icon class="text-accent" name="logo" />
+							<p>Zymbit</p>
+						</div>
 
-						<Icon name="options">
+						<Icon name="options" />
 					</div>
 
 					<div class="bg-background-dark p-4">
-						<p class="text-background-light text-center lg:text-3xl mb-4">Secure Modules</p>
+						<p
+							class="text-background-light text-center lg:text-3xl mb-4"
+						>
+							Secure Modules
+						</p>
 
 						<img
 							alt="Desktop view"
@@ -92,12 +105,12 @@ import { Icon } from "astro-icon/components";
 
 					<div class="px-3 py-1.5 flex justify-between items-center">
 						<div class="flex gap-2">
-							<span><Icon name="like"></span>
-							<span><Icon name="comment"></span>
-							<span><Icon name="send"></span>
+							<Icon name="like" />
+							<Icon name="comment" />
+							<Icon name="send" />
 						</div>
 
-						<Icon name="bookmark">
+						<Icon name="bookmark" />
 					</div>
 				</div>
 			</div>
