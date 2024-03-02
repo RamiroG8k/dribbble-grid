@@ -9,7 +9,7 @@ const { class: classList, title } = Astro.props;
 ---
 
 <div
-	class={`rounded-xl flex items-center justify-center h-full w-1/4 relative ${classList}`}
+	class={`rounded-xl flex items-center justify-center min-h-32 h-full w-1/4 relative ${classList}`}
 >
 	<span
 		class="[writing-mode:vertical-lr] h-fit rotate-180 font-semibold uppercase"
@@ -18,7 +18,7 @@ const { class: classList, title } = Astro.props;
 	</span>
 
 	<input
-		class="absolute h-full w-full opacity-0"
+		class="absolute h-full w-full opacity-0 cursor-pointer"
 		name={title}
 		type="color"
 		value={title}

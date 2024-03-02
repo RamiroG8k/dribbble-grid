@@ -1,37 +1,116 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from '../components/Card.astro';
+import ColorPill from "../components/ColorPill.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Welcome to Astro.">
 	<main
-		class="h-screen mx-auto flex flex-col lg:flex-row w-full max-w-screen-2xl gap-4"
+		class="h-screen mx-auto flex flex-col lg:flex-row w-full max-w-screen-2xl gap-4 p-4"
 	>
-		<section class="flex flex-col h-full lg:w-3/4 gap-4">
-			<div class="flex h-2/3 w-full gap-4">
+		<section class="flex flex-col h-2/3 lg:h-full lg:w-3/4 gap-4">
+			<div class="flex h-3/5 w-full gap-4">
 				<div class="rounded-xl h-full w-3/4 flex gap-4 bg-accent-light">
+					<img
+						alt="Desktop view"
+						class="w-[85%] mx-auto h-auto object-contain"
+						src="/img/desktop.png"
+					/>
 				</div>
 
 				<div class="h-full w-1/4 flex flex-col gap-4">
-					<div class="rounded-xl w-full h-1/2 bg-background-light"></div>
-					<div class="rounded-xl w-full h-1/2 bg-accent"></div>
+					<div
+						class="rounded-xl w-full h-1/2 bg-background-light grid place-content-center"
+					>
+						<Icon
+							class="text-accent text-6xl lg:text-9xl"
+							name="logo"
+						/>
+					</div>
+
+					<div
+						class="rounded-xl w-full h-1/2 bg-accent flex justify-center items-center overflow-hidden"
+					>
+						<img
+							alt="Smart watch app"
+							class="h-[110%] w-auto object-contain"
+							src="/img/render-watch.png"
+						/>
+					</div>
 				</div>
 			</div>
 
-			<div class="flex gap-4 h-1/3 w-full">
-				<div class="rounded-xl h-full w-1/3 bg-accent"></div>
-				<div class="rounded-xl h-full w-2/3 bg-accent-light"></div>
+			<div class="flex gap-4 h-2/5 w-full">
+				<div
+					class="rounded-xl h-full w-1/4 bg-accent grid place-content-center gap-3 lg:gap-6"
+				>
+					<Icon
+						class="text-white text-3xl lg:text-6xl"
+						name="monitor"
+					/>
+					<Icon class="text-white text-3xl lg:text-6xl" name="file" />
+					<Icon
+						class="text-white text-3xl lg:text-6xl"
+						name="users"
+					/>
+				</div>
+
+				<div
+					class="rounded-xl h-full w-3/4 bg-accent-light overflow-hidden"
+				>
+					<img
+						alt="Smart phone app"
+						class="w-4/5 lg:w-3/5 max-w-96 translate-y-10 h-auto mx-auto"
+						src="/img/render-phone.png"
+					/>
+				</div>
 			</div>
 		</section>
 
-		<section class="flex flex-col gap-4 h-full lg:w-1/4">
-			<div class="rounded-xl h-4/5 w-full bg-accent-light"></div>
+		<section class="flex flex-col h-full lg:w-1/4 gap-4">
+			<div
+				class="flex items-center justify-center rounded-xl h-3/4 w-full bg-accent-light p-6 lg:p-10"
+			>
+				<div class="border border-background-dark rounded-lg overflow-hidden">
+					<div class="px-3 py-1.5 flex justify-between items-center">
+						<p>Zymbit</p>
 
-			<div class="flex gap-4 h-1/5 w-full">
-				<Card title="#000000" class="text-background-light bg-background-dark" />
-				<Card title="#3b82f6" class="text-background-light bg-accent" />
-				<Card title="#dbeafe" class="bg-accent-light" />
-				<Card title="#FFFFFF" class="bg-background-light" />
+						<Icon name="options">
+					</div>
+
+					<div class="bg-background-dark p-4">
+						<p class="text-background-light text-center lg:text-3xl mb-4">Secure Modules</p>
+
+						<img
+							alt="Desktop view"
+							class="w-full max-w-40 lg:max-w-60"
+							src="/img/desktop.png"
+						/>
+					</div>
+
+					<div class="px-3 py-1.5 flex justify-between items-center">
+						<div class="flex gap-2">
+							<span><Icon name="like"></span>
+							<span><Icon name="comment"></span>
+							<span><Icon name="send"></span>
+						</div>
+
+						<Icon name="bookmark">
+					</div>
+				</div>
+			</div>
+
+			<div class="flex gap-4 h-1/4 w-full">
+				<ColorPill
+					title="#000000"
+					class="text-background-light bg-background-dark border border-background-light/50"
+				/>
+				<ColorPill
+					title="#3b82f6"
+					class="text-background-light bg-accent"
+				/>
+				<ColorPill title="#dbeafe" class="bg-accent-light" />
+				<ColorPill title="#FFFFFF" class="bg-background-light" />
 			</div>
 		</section>
 	</main>
