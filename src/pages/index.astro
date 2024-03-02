@@ -1,10 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ColorPill from "../components/ColorPill.astro";
+import DepthControl from "../components/DepthControl";
+
 import { Icon } from "astro-icon/components";
 ---
 
 <Layout title="Welcome to Astro.">
+	<DepthControl client:load threshold={0.1} />
+
 	<main class="h-auto lg:h-screen mx-auto flex flex-col lg:flex-row w-full max-w-screen-2xl gap-4 p-4">
 		<section class="flex flex-col h-auto lg:h-full w-full lg:w-3/4 gap-4">
 			<div class="flex h-60 lg:h-3/5 w-full gap-4">
